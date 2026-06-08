@@ -1,3 +1,4 @@
+//Import the Model
 const appointment = require('../models/appointmentmodel')
 
 //CREATE AN APPOINTMENT

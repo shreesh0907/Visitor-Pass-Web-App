@@ -1,3 +1,4 @@
+//Import the Model and QR Package
 const pass = require('../models/passModel')
 const QRCode = require('qrcode')
 

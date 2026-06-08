@@ -1,8 +1,10 @@
+//Import the Model
 const Visitor = require("../models/visitormodel");
 const Appointment = require("../models/appointmentmodel");
 const Pass = require("../models/passModel");
 const Check = require("../models/checkmodel");
 
+//Get Dashboard Statistics
 exports.getDashboardStats = async (req, res) => {
   try {
     const totalVisitors = await Visitor.countDocuments();

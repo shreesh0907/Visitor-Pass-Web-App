@@ -1,3 +1,4 @@
+//Defining the Route
 const express = require('express');
 const visitormodel = require('../models/visitormodel');
 const requireAuth = require('../middleware/requireAuth');
@@ -8,14 +9,14 @@ const router = express.Router();
 /*  
     Route and Method: [POST /api/visitors]
     Description: Create a visitor
-    Access: Public
+    Access: Protected
     Parameters: None
 */
 router.post('/', requireAuth, requireRole('security', 'admin'), createVisitor);
 /*  
     Route and Method: [GET /api/visitors]
     Description: Get all the visitors
-    Access: Public
+    Access: Protected
     Parameters: None
 */
 router.get('/', requireAuth, requireRole('admin', 'security'), getAllVisitors);
@@ -31,7 +32,7 @@ router.get('/:id', requireAuth, requireRole('admin', 'security'), getVisitorById
 /*  
     Route and Method: [PUT /api/visitors/:id]
     Description: Update a Visitor by their ID
-    Access: Public
+    Access: Protected
     Parameters: ID
 */
 router.put('/:id', requireAuth, requireRole('security', 'admin'), updateVisitorById);
@@ -40,7 +41,7 @@ router.put('/:id', requireAuth, requireRole('security', 'admin'), updateVisitorB
 /*  
     Route and Method: [DELETE /api/visitors/:id]
     Description: Delete a Visitor by their ID
-    Access: Public
+    Access: Protected
     Parameters: ID
 */
 router.delete('/:id', requireAuth, requireRole('admin'), deleteVisitorById);

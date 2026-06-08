@@ -1,6 +1,8 @@
+//Import the Model and JWT
 const User = require ('../models/usermodel')
 const jwt = require ('jsonwebtoken')
 
+//Create the Token
 const createToken = (_id) => {
     return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
 }

@@ -1,3 +1,4 @@
+//Import the Model
 const visitor = require('../models/visitormodel')
 
 //CREATE A VISITOR 

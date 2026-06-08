@@ -1,5 +1,4 @@
 # Visitor Pass Management System
-
 ## Overview
 
 The Visitor Pass Management System is a full-stack MERN application designed to digitize and streamline visitor management for organizations. The system replaces traditional paper-based visitor registers with a secure digital solution that supports visitor registration, appointment scheduling, QR-based pass issuance, and visitor check-in/check-out tracking.
@@ -166,8 +165,6 @@ POST /api/checklogs/checkout
 * OTP verification
 * Multi-organization support
 * Docker deployment
-* Advanced analytics dashboard
-
 ---
 
 ## Author

@@ -1,3 +1,4 @@
+//Defining the Route
 const express = require('express');
 const visitormodel = require('../models/visitormodel');
 const requireAuth = require('../middleware/requireAuth');
@@ -8,7 +9,7 @@ const router = express.Router();
 /*  
     Route and Method: [POST /api/appointments]
     Description: Create a visitor
-    Access: Public
+    Access: Protected
     Parameters: None
 */
 router.post('/', requireAuth, requireRole('employee', 'admin'), createAppointment)
@@ -24,7 +25,7 @@ router.get('/', requireAuth, requireRole('admin', 'employee', 'security'), getAl
 /*  
     Route and Method: [GET /api/appointments/:id]
     Description: Get a Appointment by their ID
-    Access: Public
+    Access: Protected
     Parameters: ID
 */
 router.get('/:id', requireAuth, requireRole('admin', 'employee', 'security'), getAppointmentById)
@@ -32,7 +33,7 @@ router.get('/:id', requireAuth, requireRole('admin', 'employee', 'security'), ge
 /*  
     Route and Method: [PUT /api/appointments/:id]
     Description: Update an Appointment by their ID
-    Access: Public
+    Access: Protected
     Parameters: ID
 */
 router.put('/:id', requireAuth, requireRole('employee', 'admin'), updateAppointmentById)
@@ -41,7 +42,7 @@ router.put('/:id', requireAuth, requireRole('employee', 'admin'), updateAppointm
 /*  
     Route and Method: [DELETE /api/appointments/:id]
     Description: Delete an Appointment by their ID
-    Access: Public
+    Access: Protected
     Parameters: ID
 */
 router.delete('/:id', requireAuth, requireRole('admin'), deleteAppointmentById)

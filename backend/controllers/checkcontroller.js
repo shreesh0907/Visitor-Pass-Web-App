@@ -1,3 +1,4 @@
+//Import the Model
 const Pass = require('../models/passModel')
 const Check = require('../models/checkmodel')
 

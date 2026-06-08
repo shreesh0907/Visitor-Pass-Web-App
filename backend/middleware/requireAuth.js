@@ -1,13 +1,16 @@
+//Import the Model and JWT
 const jwt = require('jsonwebtoken')
 const usermodel = require('../models/usermodel')
-const requireAuth = async(req, res, next) => {
 
+//RequireAuth Function
+const requireAuth = async(req, res, next) => {
     //Verify Authentication
     const {authorization} = req.headers
     if(!authorization){
         return res.status(401).json({error: "Authentication Token Required"})
     }
-    //Bearer abdw.wjjdwo.jjwfn
+    
+    //Verify Authorization
     const token = authorization.split(' ')[1]
     try {
         const {_id} = jwt.verify(token, process.env.SECRET)

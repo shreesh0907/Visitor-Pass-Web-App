@@ -1,7 +1,7 @@
-
-
+//requireRole Function
 const requireRole = (...roles) => {
     return (req, res, next) => {
+    //Verify Authentication
         if (!req.user) {
             return res.status(401).json({
                 error: 'Authentication required'
@@ -13,7 +13,6 @@ const requireRole = (...roles) => {
                 error: 'Access denied'
             })
         }
-
         next()
     }
 }
